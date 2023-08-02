@@ -4,7 +4,7 @@ const app = express();
 
 const port = process.env.PORT || 8007;
 
-
+ 
 const cors = require("cors");
 // app.use(cors());
 app.use("*", cors({
@@ -330,5 +330,55 @@ app.post("/userData", async (req, res) => {
       });
   } catch (error) {
     res.send({ status: "error at first" });
+  }
+});
+app.post("/addreview/:id", async (req, res) => {
+  console.log("review hello");
+  const {reviewdata} = req.body;
+  console.log(reviewdata);
+  try {
+    const { id } = req.params;
+    console.log(id);
+    const isproduct = await Products.findOne({ id: id });
+  //  reviewdata=reviewdata.concat(name);
+   // console.log("Reviewdata here----->");
+   // console.log(reviewdata);
+    const addreview=await isproduct.addnewreview(reviewdata);
+    console.log(isproduct);
+    const finalproduct = await isproduct.save();
+    console.log(finalproduct);
+    res.status(201).json(finalproduct);
+
+  
+  }
+  catch (error) {
+
+    console.log("error" + error.message);
+  }
+})
+
+app.get("/getAllUser",async(req,res)=>{
+  // const {userid}=req.body;
+   try{
+     const allUser=await USER.find({});
+     res.send({status:"ok",data:allUser})
+   }catch(error){
+       console.log( error);
+   }
+})
+
+app.post("/deleteUser",async(req,res)=>{
+  const {userid}=req.body;
+  //console.log("start");
+  try{ 
+   //console.log("done");
+      USER.deleteOne({_id: userid}).then(result => {
+          console.log(result)
+      });
+       res.send({status:"ok",data:"Deleted"});
+   }
+  catch(error){
+      console.log("not done");
+      console.log(error);
   }
 });

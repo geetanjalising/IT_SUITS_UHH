@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
    email: {
       type: String,
       required: true,
-      unique: true,
+      unique: true, 
       validate(value) {
          if (!validator.isEmail(value)) {
             throw new Error("not valid amail address")
@@ -78,8 +78,13 @@ carts:Array
 
 //add to cart data
 userSchema.methods.addcartdata = async function(cart){
+//    console.log(this.carts);
+// console.log("__________________");
+// console.log(cart);
    try{
+
       this.carts = this.carts.concat(cart);
+
       await this.save();
       return this.carts
    }catch(error){
