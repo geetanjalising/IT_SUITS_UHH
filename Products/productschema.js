@@ -13,19 +13,20 @@ const productSchema=new mongoose.Schema({
 })
 
 //adding review
-productSchema.methods.addnewreview=async function(reviewdata){
-    try{
-        console.log(this.review);
-        console.log(reviewdata);
-        this.review=this.review.concat(reviewdata);
-        console.log("++++++++++++++++");
-        console.log(this.review);
-        await this.save();
-        return this.review
-    }catch(error){
-        console.log(error);
-    }
-}
+// productSchema.methods.addnewreview=async function(reviewdata){
+//     try{
+//         // console.log(this.review);
+//         // console.log(reviewdata);
+//         this.review=this.review.concat(reviewdata);
+//         console.log("++++++++++++++++");
+//        // console.log(this.review);
+//         await this.save();
+//       return this.review
+      
+//     }catch(error){
+//         console.log(error);
+//     }
+// }
 
 const Product=new mongoose.model("eCollection",productSchema);
 

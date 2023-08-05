@@ -14,6 +14,12 @@
         },
         description: 'This electric kettle from Pigeon will soon become a travelers best friend, a hostelite saviour and an answer to all the midnight cravings. With this handy appliance, you can boil water and use it to make instant noodles, packet soup, coffee and green tea.',
         discount: 'Extra 10_ Off', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Deal of the day' 
     },
     { 
@@ -31,6 +37,12 @@
         },
         description: 'This non-stick sandwich toaster .easy to use and very handy. Directly hold over flame to make tasty toasts and toasted sandwiches. Specially designed by keeping your needs in mind, the sandwich maker makes whatever youre doing simpler, smarter and better',
         discount: 'From 99+5_ Off', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Pestige, Nova & more' 
     },
     { 
@@ -48,6 +60,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Today Deal' 
     },
     { 
@@ -65,6 +83,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: '1-piece left' 
     },
     { 
@@ -82,6 +106,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Latest Arrival' 
     },
     { 
@@ -99,6 +129,12 @@
         },
         description: 'This unique product can tone your back muscles, reduce belly fat, improve blood circulation and also improves your body posture. It increases the stamina, energy and vitality of the body. The elastic resistance of the rubber training rope can be used to train and exercise in whichever way you want, according to your physical needs.',
         discount: 'Upto 70_ Off', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Deal of the Day' 
     },
     { 
@@ -116,6 +152,12 @@
         },
         description: 'The Molife Sense 500, a brilliant smartwatch with a beautiful large display. Say hello to the infinity 1.7-inch display with 2.5D curved edges. Thanks to seamless Bluetooth 5.0 connectivity, you wont have to keep waiting. Bring a change to your outfit every day with changeable straps. A splash of color every day keeps the boredom away.',
         discount: 'Grab Now', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Best Seller' 
     },
     { 
@@ -133,6 +175,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Kubra, Nova & more' 
     },
     { 
@@ -150,6 +198,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Kubra, Nova & more' 
     },
     { 
@@ -167,6 +221,12 @@
         },
         description: '',
         discount: 'From ₹609', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Kubra,NHP 8220' 
     },
     { 
@@ -184,6 +244,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Kubra, Nova & more' 
     },
     { 
@@ -201,6 +267,12 @@
         },
         description: '',
         discount: 'From ₹899', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'KWa, Nova & more' 
     },
     { 
@@ -218,6 +290,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Kubra, Nova & more' 
     },
     { 
@@ -235,6 +313,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Kubra, Nova & more' 
     },
     { 
@@ -252,6 +336,12 @@
         },
         description: 'Gathered A Line Black Midi Dress',
         discount: 'Extra 10_ Off', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Best Seller' 
     },
     { 
@@ -269,6 +359,12 @@
         },
         description: 'This non-stick sandwich toaster .easy to use and very handy. Directly hold over flame to make tasty toasts and toasted sandwiches. Specially designed by keeping your needs in mind, the sandwich maker makes whatever youre doing simpler, smarter and better',
         discount: 'From 99+5_ Off', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Today Deal' 
     },
     { 
@@ -286,6 +382,12 @@
         },
         description: 'This unique product can tone your back muscles, reduce belly fat, improve blood circulation and also improves your body posture. It increases the stamina, energy and vitality of the body. The elastic resistance of the rubber training rope can be used to train and exercise in whichever way you want, according to your physical needs.',
         discount: 'Upto 70_ Off', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Grab Now' 
     },
     { 
@@ -303,6 +405,12 @@
         },
         description: 'The Molife Sense 500, a brilliant smartwatch with a beautiful large display. Say hello to the infinity 1.7-inch display with 2.5D curved edges. Thanks to seamless Bluetooth 5.0 connectivity, you wont have to keep waiting. Bring a change to your outfit every day with changeable straps. A splash of color every day keeps the boredom away.',
         discount: '30_ Off', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Best Seller' 
     },
  
@@ -321,6 +429,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Only for U' 
     },
     { 
@@ -338,6 +452,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: '50_ off' 
     },
     { 
@@ -355,6 +475,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Latest Arrival' 
     },
     { 
@@ -372,6 +498,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Grab Now' 
     },
     { 
@@ -389,6 +521,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'ending soon' 
     },
     { 
@@ -406,6 +544,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Grab Now' 
     },
     { 
@@ -423,6 +567,12 @@
         },
         description: '',
         discount: 'From ₹499', 
+        review:[
+            {
+                name:"xyz",
+                review:"nice product"
+            }
+        ],
         tagline: 'Best Seller' 
     },
 

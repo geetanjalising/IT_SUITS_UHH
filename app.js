@@ -4,7 +4,7 @@ const app = express();
 
 const port = process.env.PORT || 8007;
 
- 
+
 const cors = require("cors");
 // app.use(cors());
 app.use("*", cors({
@@ -127,7 +127,7 @@ app.post("/signin", async (req, res) => {
 
       }
       else {
-        console.log(email+" FFFVF "+userlogin.email)
+        console.log(email + " FFFVF " + userlogin.email)
         //const token = await userlogin.generateAuthtoken();
         //console.log("token from backened sign in"+token);
         const token1 = jwt.sign({ email: userlogin.email }, secretKey, { expiresIn: 99999999 });
@@ -140,8 +140,8 @@ app.post("/signin", async (req, res) => {
         //   status: "Ok", data: token1
         // })
 
-       res.status(201).json({status:"ok",data:token1});
-          //res.send({status:"ok",data:token1});
+        res.status(201).json({ status: "ok", data: token1 });
+        //res.send({status:"ok",data:token1});
         // res.status(201).json({ userlogin })
       }
     } else {
@@ -155,7 +155,7 @@ app.post("/signin", async (req, res) => {
 
 //const authenticate = require("./middleware/authenticate");
 
-app.post("/addcart/:id",  async (req, res) => {
+app.post("/addcart/:id", async (req, res) => {
   const { token, email } = req.body;
   //console.log(token); 
   try {
@@ -197,7 +197,7 @@ app.post("/addcart/:id",  async (req, res) => {
   }
 })
 
-app.post("/cartdetails",  async (req, res) => {
+app.post("/cartdetails", async (req, res) => {
   //console.log("router pr a gya");
   const { token } = req.body;
   try {
@@ -246,7 +246,7 @@ app.post("/validuser", async (req, res) => {
   }
 })
 
-app.delete("/remove/:id",  async (req, res) => {
+app.delete("/remove/:id", async (req, res) => {
   const { token } = req.body;
   //console.log(token);
   try {
@@ -283,7 +283,7 @@ app.delete("/remove/:id",  async (req, res) => {
   }
 })
 
-app.get("/logout",  async (req, res) => {
+app.get("/logout", async (req, res) => {
   try {
     req.rootUser.tokens = req.rootUser.tokens.filter((curelem) => {
       return curelem.token !== req.token
@@ -334,22 +334,51 @@ app.post("/userData", async (req, res) => {
 });
 app.post("/addreview/:id", async (req, res) => {
   console.log("review hello");
-  const {reviewdata} = req.body;
+  const { reviewdata, name } = req.body;
   console.log(reviewdata);
   try {
     const { id } = req.params;
     console.log(id);
     const isproduct = await Products.findOne({ id: id });
-  //  reviewdata=reviewdata.concat(name);
-   // console.log("Reviewdata here----->");
-   // console.log(reviewdata);
-    const addreview=await isproduct.addnewreview(reviewdata);
+    const newreview = {
+      name: name,
+      review: reviewdata.review
+    }
+    //  reviewdata=reviewdata.concat(name);
+    // console.log("Reviewdata here----->");
+    //  console.log(newreview);
+    //  console.log("newreview");
     console.log(isproduct);
-    const finalproduct = await isproduct.save();
-    console.log(finalproduct);
-    res.status(201).json(finalproduct);
-
-  
+    // const addreview=await isproduct.addnewreview(newreview);
+    //console.log(addreview);
+    if (isproduct) {
+      isproduct.review.push(newreview);
+      await isproduct.save();
+      // try {
+      // await Products.updateOne(
+      //   {
+      //     id:id,   
+      //   },
+      //   {
+      //     $set:{ 
+      //      addreview
+      //     },
+      //   }     
+      // )     
+      // res.send({status:"ok",score});
+      // } catch (error) { 
+      //   console.log(error); 
+      //   res.json({ status: "Something Went Wrong" });
+      // }  
+      //   await isproduct.save();
+      // await Products.save();
+      console.log("Reviewdata added----->");
+      console.log(isproduct);
+      res.status(201).json(isproduct);
+    }
+    else {
+      res.status(401).json({ error: "invalid user1" });
+    }
   }
   catch (error) {
 
@@ -357,28 +386,57 @@ app.post("/addreview/:id", async (req, res) => {
   }
 })
 
-app.get("/getAllUser",async(req,res)=>{
+app.get("/getAllUser", async (req, res) => {
   // const {userid}=req.body;
-   try{
-     const allUser=await USER.find({});
-     res.send({status:"ok",data:allUser})
-   }catch(error){
-       console.log( error);
-   }
+  try {
+    const allUser = await USER.find({});
+    res.send({ status: "ok", data: allUser })
+  } catch (error) {
+    console.log(error);
+  }
 })
 
-app.post("/deleteUser",async(req,res)=>{
-  const {userid}=req.body;
+app.post("/deleteUser", async (req, res) => {
+  const { userid } = req.body;
   //console.log("start");
-  try{ 
-   //console.log("done");
-      USER.deleteOne({_id: userid}).then(result => {
-          console.log(result)
-      });
-       res.send({status:"ok",data:"Deleted"});
-   }
-  catch(error){
-      console.log("not done");
-      console.log(error);
+  try {
+    //console.log("done");
+    USER.deleteOne({ _id: userid }).then(result => {
+      console.log(result)
+    });
+    res.send({ status: "ok", data: "Deleted" });
+  }
+  catch (error) {
+    console.log("not done");
+    console.log(error);
+  }
+});
+
+app.delete("/removeItembyAdmin/:id", async (req, res) => {
+  const { email } = req.body;
+  try {
+    const { id } = req.params;
+    //  console.log(id);
+    //  const itemToDelete = await Products.findOne({ id: id });
+    //console.log(itemToDelete);
+    //const user=await USER.find();
+    //console.log(user);
+    const account = await USER.findOne({ email: email });
+    // console.log(account);
+    //console.log(account.carts);
+    account.carts = account.carts.filter((currval) => {
+      //console.log(currval.id+"   "+id);
+      //  if(currval.id!=id)
+      //   console.log("flag");
+      return currval.id != id;
+    });
+
+    account.save();
+    // user.save();  
+    res.status(201).json(account);
+    // console.log("item remove");
+  } catch (error) {
+    console.log(error + "error");
+    res.status(400).json(error);
   }
 });
